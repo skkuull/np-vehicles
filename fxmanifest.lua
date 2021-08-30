@@ -2,6 +2,8 @@ fx_version "cerulean"
 
 games { "gta5" }
 
+author "alza7f KNFH. / Skull#2222 ."
+
 description "NoPixel Vehicles System"
 
 version "0.1.0"
