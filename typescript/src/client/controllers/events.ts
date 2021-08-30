@@ -3,7 +3,7 @@ import { GetJerryCanFuelLevel, GetVehicleFuel, GetVehicleRefuelCost, RefuelVehic
 import { GetLicensePlate, SetVehicleFakeLicensePlate } from './others/licenseplate';
 import { GetVehicleIdentifier, GiveVehicleKey, Keys } from './state/keys';
 import { CurrentSeat, GetCurrentVehicleIdentifier } from './vehicle';
-import { PassengerThread } from './threads/Passenger'; // wrong path ==============================================
+import { PassengerThread } from './threads/passenger';
 import { DoLongHudText, GetClosetPlayer } from '../utils/tools';
 import { GetRandom } from '@shared/utils/tools';
 import { DoorLockCheck } from './systems/lockpicking';
