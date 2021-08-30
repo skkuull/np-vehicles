@@ -141,6 +141,37 @@ RPC.register('GetVehicleName', (pModel: string | number) => {
     return GetLabelText(GetDisplayNameFromVehicleModel(model));
 });
 
+onNet('np:vehicles:setKeys', (pKeys: string[]) => {
+    if (!pKeys) return;
+    Keys.clear();
+    pKeys.forEach((key) => Keys.add(key));
+    Garage.ClearGarageCache(null, true);
+});
+
+onNet('np:vehicles:addKeys', (pVIN: string) => {
+    if (!Keys.has(pVIN)) Keys.add(pVIN);
+    Garage.ClearGarageCache(null, true);
+});
+
+onNet('np:vehicles:removeKeys', (pVIN: string) => {
+    if (!Keys.has(pVIN)) Keys.delete(pVIN);
+    Garage.ClearGarageCache(null, true);
+});
+
+onNet('np:vehicles:addSharedKeys', (pVINs: string[]) => {
+    pVINs.forEach((vin) => {
+        if (!Keys.has(vin)) Keys.add(vin);
+    });
+    Garage.ClearGarageCache(null, true);
+});
+
+onNet('np:vehicles:removeSharedKeys', (pVINs: string[]) => {
+    pVINs.forEach((vin) => {
+        if (Keys.has(vin)) Keys.delete(vin);
+    });
+    Garage.ClearGarageCache(null, true);
+});
+
 onNet('np:vehicles:addGarage', (pGarage: GarageInfo) => {
     Garage.AddGarage(pGarage.garage_id, pGarage);
 });
