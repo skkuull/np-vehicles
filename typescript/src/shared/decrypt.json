@@ -1,0 +1,8 @@
+{
+    "what is this?": "Sample for auto decompiler website that i am working on",
+    "_0x5113aa": "playerPed, PlayerPedId()",
+    "_0x2a29a0": "isNetworkPed, GetVehicleDoorAngleRatio()",
+    "_0x185435": "isDoorOpen, NetworkGetEntityIsNetworked()",
+    "_0x447511": "playerPed, IsPedStill()",
+    "//": "This is only a sample don't think i'll complete this ever"
+}
